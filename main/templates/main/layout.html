@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/release/v.5.8.2/css/all.css">
+</head>
+<body>
+    <aside>
+        <img src="{% static 'main/img/it.png' %}" alt="Picture">
+        <span class="Picture">ITishnik</span>
+        <h3>Navigation</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="fa-sharp fa-solid fa-house"></i>Main</li></a>
+            <a href="{% url 'about' %}"><li><i class="fa-sharp fa-solid fa-circle-info"></i>About Us</li></a>
+            <a href="{% url 'nova_home' %}"><li><i class="fa-solid fa-list"></i></i>News</li></a>
+            <a href=""><li><i class="fa-sharp fa-solid fa-phone"></i>Contacts</li></a>
+    
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
